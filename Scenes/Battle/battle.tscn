@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://kxfab5pn4q4c" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="4_o8bsx"]
 [ext_resource type="Resource" uid="uid://ci847yrv1e0mg" path="res://characters/warrior/warrior.tres" id="4_rgg0r"]
 [ext_resource type="Resource" uid="uid://balaamf0edr8v" path="res://characters/warrior/cards/warrior_block.tres" id="5_en5gs"]
+[ext_resource type="PackedScene" uid="uid://bh0bgcfu4dth4" path="res://Scenes/card_ui/mana_ui.tscn" id="10_rgg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8wje"]
 size = Vector2(256, 100)
@@ -66,3 +67,5 @@ card = ExtResource("4_o8bsx")
 [node name="CardUI3" parent="BattleUI/Hand" unique_id=1903025253 instance=ExtResource("2_3qw02")]
 layout_mode = 2
 card = ExtResource("5_en5gs")
+
+[node name="ManaUI" parent="BattleUI" unique_id=1788293824 instance=ExtResource("10_rgg0r")]
