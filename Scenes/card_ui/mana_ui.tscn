@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ea01n5hbj434"]
+[gd_scene format=3 uid="uid://bh0bgcfu4dth4"]
 
 [ext_resource type="Theme" uid="uid://cyujobfdcs0oc" path="res://main_theme.tres" id="1_tc6ae"]
 [ext_resource type="Script" path="res://Scenes/ui/mana_ui.gd" id="2_48ry4"]
