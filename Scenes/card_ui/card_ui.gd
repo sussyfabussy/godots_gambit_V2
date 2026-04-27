@@ -4,8 +4,8 @@ extends Control
 signal reparent_requested(which_card_ui: CardUI)
 
 const BASE_STYLEBOX := preload("uid://rr31frftay8")
-const DRAG_STYLEBOX := preload("uid://dntnlpqmyvv5a")
-const HOVER_STYLEBOX := preload("uid://b6hkx2byf1oit")
+const DRAG_STYLEBOX := preload("uid://citqi3a5bcbdy")
+const HOVER_STYLEBOX := preload("uid://n6upd2f74mrs")
 @export var card: Card : set = _set_card
 
 @onready var panel: Panel = $Panel
