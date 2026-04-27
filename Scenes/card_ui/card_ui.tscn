@@ -2,6 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://cyujobfdcs0oc" path="res://main_theme.tres" id="1_m1ug6"]
 [ext_resource type="Script" uid="uid://b4ci78fqufvji" path="res://Scenes/card_ui/card_ui.gd" id="2_ypsf2"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://art/tile_0103.png" id="3_7aq24"]
+[ext_resource type="StyleBox" uid="uid://rr31frftay8" path="res://Scenes/card_ui/card_base_stylebox.tres" id="3_qc77q"]
 [ext_resource type="Script" uid="uid://gjyb87inq711" path="res://Scenes/card_ui/card_state_machine.gd" id="3_rspb2"]
 [ext_resource type="Script" uid="uid://demkuh8266sc0" path="res://Scenes/card_ui/card_states/card_base_state.gd" id="4_ld0jv"]
 [ext_resource type="Script" uid="uid://d1xd7hnrmh0hg" path="res://Scenes/card_ui/card_states/card_clicked_state.gd" id="5_68a2o"]
@@ -25,7 +27,7 @@ grow_vertical = 2
 theme = ExtResource("1_m1ug6")
 script = ExtResource("2_ypsf2")
 
-[node name="Color" type="ColorRect" parent="." unique_id=640756894]
+[node name="Panel" type="Panel" parent="." unique_id=1098570086]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,18 +35,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.118302606, 0.27199787, 0.0940407, 1)
+theme_override_styles/panel = ExtResource("3_qc77q")
 
-[node name="State" type="Label" parent="." unique_id=1330730946]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "State"
+[node name="Cost" type="Label" parent="." unique_id=288993208]
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 10.0
+text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="." unique_id=475830627]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_7aq24")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="DropPointDetector" type="Area2D" parent="." unique_id=1519811074]
 collision_mask = 2
