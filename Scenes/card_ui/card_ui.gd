@@ -3,9 +3,9 @@ extends Control
 
 signal reparent_requested(which_card_ui: CardUI)
 
-const BASE_STYLEBOX := preload("uid://rr31frftay8")
-const DRAG_STYLEBOX := preload("uid://citqi3a5bcbdy")
-const HOVER_STYLEBOX := preload("uid://n6upd2f74mrs")
+const BASE_STYLEBOX := preload("res://Scenes/card_ui/card_base_stylebox.tres")
+const DRAG_STYLEBOX := preload("res://Scenes/card_ui/card_dragging_stylebox.tres")
+const HOVER_STYLEBOX := preload("res://Scenes/card_ui/card_hover_stylebox.tres")
 
 @export var card: Card : set = _set_card
 @export var char_stats: CharacterStats : set = _set_char_stats
