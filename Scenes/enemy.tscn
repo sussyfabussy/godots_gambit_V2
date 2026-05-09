@@ -1,71 +1,26 @@
 [gd_scene format=3 uid="uid://bxvfpq8kng8vf"]
 
-[ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_po0sg"]
-[ext_resource type="PackedScene" uid="uid://cdnt47eagsi3a" path="res://Scenes/player/player.tscn" id="2_haro7"]
-[ext_resource type="Resource" uid="uid://ci847yrv1e0mg" path="res://characters/warrior/warrior.tres" id="3_56vhr"]
-[ext_resource type="PackedScene" uid="uid://v48n58msigw8" path="res://Scenes/card_target_selector/card_target_selector.tscn" id="4_ta2yt"]
-[ext_resource type="Script" uid="uid://dib8ry8gd3xnm" path="res://Scenes/ui/hand.gd" id="5_m4x7e"]
-[ext_resource type="PackedScene" uid="uid://d2hgcxhse0kas" path="res://Scenes/card_ui/card_ui.tscn" id="6_vt4ob"]
-[ext_resource type="Resource" uid="uid://kxfab5pn4q4c" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="7_hgeoe"]
-[ext_resource type="Resource" uid="uid://balaamf0edr8v" path="res://characters/warrior/cards/warrior_block.tres" id="8_tk7xo"]
-[ext_resource type="PackedScene" uid="uid://bh0bgcfu4dth4" path="res://Scenes/card_ui/mana_ui.tscn" id="9_scl1n"]
-[ext_resource type="PackedScene" uid="uid://bxvfpq8kng8vf" path="res://Scenes/enemy.tscn" id="10_dhkrs"]
+[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://art/tile_0110.png" id="1_hghv2"]
+[ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="2_afpow"]
+[ext_resource type="PackedScene" uid="uid://br6s23jvy7g6n" path="res://Scenes/ui/stats_ui.tscn" id="3_287tu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8wje"]
-size = Vector2(256, 100)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvvpr"]
 
-[node name="Battle" type="Node2D" unique_id=1687854964]
-metadata/_edit_lock_ = true
+[node name="Enemy" type="Area2D" unique_id=535308417]
+collision_layer = 4
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1145705812]
-modulate = Color(0.42365062, 0.42365065, 0.42365062, 1)
-texture = ExtResource("1_po0sg")
-centered = false
-metadata/_edit_lock_ = true
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1419041059]
+texture = ExtResource("1_hghv2")
 
-[node name="CardDropArea" type="Area2D" parent="." unique_id=2093549311]
-collision_layer = 2
+[node name="Arrow" type="Sprite2D" parent="." unique_id=1462945560]
+visible = false
+position = Vector2(15, 0)
+rotation = -1.5707964
+texture = ExtResource("2_afpow")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea" unique_id=1674063463]
-position = Vector2(128, 50)
-shape = SubResource("RectangleShape2D_c8wje")
-debug_color = Color(0, 0.6, 0.69803923, 0.15294118)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=745547577]
+shape = SubResource("RectangleShape2D_vvvpr")
 
-[node name="Enemy" parent="." unique_id=535308417 instance=ExtResource("10_dhkrs")]
-position = Vector2(194, 76)
-
-[node name="Player" parent="." unique_id=882827428 instance=ExtResource("2_haro7")]
-position = Vector2(64, 80)
-stats = ExtResource("3_56vhr")
-
-[node name="CardTargetSelector" parent="." unique_id=1545984047 instance=ExtResource("4_ta2yt")]
-
-[node name="BattleUI" type="CanvasLayer" parent="." unique_id=770813461 groups=["ui_layer"]]
-
-[node name="Hand" type="HBoxContainer" parent="BattleUI" unique_id=37413406]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = -30.0
-offset_right = 75.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
-script = ExtResource("5_m4x7e")
-
-[node name="CardUI" parent="BattleUI/Hand" unique_id=142896577 instance=ExtResource("6_vt4ob")]
-layout_mode = 2
-card = ExtResource("7_hgeoe")
-
-[node name="CardUI2" parent="BattleUI/Hand" unique_id=1081002732 instance=ExtResource("6_vt4ob")]
-layout_mode = 2
-card = ExtResource("7_hgeoe")
-
-[node name="CardUI3" parent="BattleUI/Hand" unique_id=1903025253 instance=ExtResource("6_vt4ob")]
-layout_mode = 2
-card = ExtResource("8_tk7xo")
-
-[node name="ManaUI" parent="BattleUI" unique_id=1788293824 instance=ExtResource("9_scl1n")]
+[node name="StatsUI" parent="." unique_id=2090387202 groups=["enemies"] instance=ExtResource("3_287tu")]
+offset_top = 8.0
+offset_bottom = 24.0
