@@ -5,8 +5,7 @@ const MOUSE_Y_SNAPBACK_THRESHOLD := 138
 
 func enter() -> void: 
 	#debug color, set aiming state, clear target array
-	card_ui.color.color = Color.WEB_PURPLE
-	card_ui.state.text = "AIMING"
+	
 	card_ui.targets.clear()
 	#offset for card to animate it in the center of hand
 	var offset := Vector2(card_ui.parent.size.x/2, -card_ui.size.y/2)

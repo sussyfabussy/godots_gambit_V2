@@ -5,10 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://bxvfpq8kng8vf" path="res://Scenes/enemy.tscn" id="2_17ekq"]
 [ext_resource type="Script" uid="uid://dib8ry8gd3xnm" path="res://Scenes/ui/hand.gd" id="2_aqr0y"]
 [ext_resource type="PackedScene" uid="uid://cdnt47eagsi3a" path="res://Scenes/player/player.tscn" id="3_17ekq"]
+[ext_resource type="Resource" uid="uid://dmg1g6yk82q1u" path="res://enemies/crab/test_enemy.tres" id="3_bch6i"]
 [ext_resource type="PackedScene" uid="uid://v48n58msigw8" path="res://Scenes/card_target_selector/card_target_selector.tscn" id="3_vvvpr"]
 [ext_resource type="Resource" uid="uid://kxfab5pn4q4c" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="4_o8bsx"]
 [ext_resource type="Resource" uid="uid://ci847yrv1e0mg" path="res://characters/warrior/warrior.tres" id="4_rgg0r"]
 [ext_resource type="Resource" uid="uid://balaamf0edr8v" path="res://characters/warrior/cards/warrior_block.tres" id="5_en5gs"]
+[ext_resource type="PackedScene" uid="uid://bh0bgcfu4dth4" path="res://Scenes/card_ui/mana_ui.tscn" id="10_rgg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8wje"]
 size = Vector2(256, 100)
@@ -32,6 +34,7 @@ debug_color = Color(0, 0.6, 0.69803923, 0.15294118)
 
 [node name="Enemy" parent="." unique_id=535308417 instance=ExtResource("2_17ekq")]
 position = Vector2(194, 76)
+stats = ExtResource("3_bch6i")
 
 [node name="Player" parent="." unique_id=882827428 instance=ExtResource("3_17ekq")]
 position = Vector2(64, 80)
@@ -55,14 +58,24 @@ grow_vertical = 0
 alignment = 1
 script = ExtResource("2_aqr0y")
 
-[node name="CardUI" parent="BattleUI/Hand" unique_id=142896577 instance=ExtResource("2_3qw02")]
-layout_mode = 2
-card = ExtResource("4_o8bsx")
-
 [node name="CardUI2" parent="BattleUI/Hand" unique_id=1081002732 instance=ExtResource("2_3qw02")]
 layout_mode = 2
 card = ExtResource("4_o8bsx")
+char_stats = ExtResource("4_rgg0r")
 
 [node name="CardUI3" parent="BattleUI/Hand" unique_id=1903025253 instance=ExtResource("2_3qw02")]
 layout_mode = 2
 card = ExtResource("5_en5gs")
+char_stats = ExtResource("4_rgg0r")
+
+[node name="CardUI" parent="BattleUI/Hand" unique_id=142896577 instance=ExtResource("2_3qw02")]
+layout_mode = 2
+card = ExtResource("4_o8bsx")
+char_stats = ExtResource("4_rgg0r")
+
+[node name="ManaUI" parent="BattleUI" unique_id=1788293824 instance=ExtResource("10_rgg0r")]
+offset_left = 4.0
+offset_top = -24.0
+offset_right = 22.0
+offset_bottom = -6.0
+char_stats = ExtResource("4_rgg0r")
