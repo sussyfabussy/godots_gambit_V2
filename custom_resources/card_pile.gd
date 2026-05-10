@@ -17,7 +17,7 @@ func draw_card() -> Card:
 
 
 func add_card(card: Card):
-	card.append(card)
+	cards.append(card)
 	card_pile_size_changed.emit(cards.size())
 
 

@@ -7,7 +7,7 @@ extends PanelContainer
 @onready var tooltip_text_label: RichTextLabel = %TooltipText
 
 var tween: Tween
-var tooltip_visible := false 
+var is_visible := false 
 
 func _ready() -> void:
 	Events.card_tooltip_requested.connect(show_tooltip)
@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 func show_tooltip(icon: Texture, text: String) -> void:
-	tooltip_visible = true
+	is_visible = true
 	if tween:
 		tween.kill()
 	
@@ -29,7 +29,7 @@ func show_tooltip(icon: Texture, text: String) -> void:
 
 
 func hide_tooltip() -> void:
-	tooltip_visible = false
+	is_visible = false
 	if tween:
 		tween.kill()
 
