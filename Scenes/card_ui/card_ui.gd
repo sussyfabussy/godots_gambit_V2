@@ -78,8 +78,9 @@ func _set_playable(value: bool) -> void:
 	else:
 		cost.remove_theme_color_override("font_color")
 		icon.modulate = Color(1, 1, 1, 1)
-		
-		
+
+
+
 func _set_char_stats(value: CharacterStats) -> void:
 	char_stats = value
 	char_stats.stats_changed.connect(_on_char_stats_changed)
@@ -97,10 +98,10 @@ func _on_drop_point_detector_area_exited(area: Area2D) -> void:
 func _on_card_drag_or_aiming_started(used_card: CardUI) -> void:
 		if used_card == self:
 			return
-			
+
 		disabled = true
-		
-		
+
+
 func _on_card_drag_or_aiming_ended(_card: CardUI) -> void:
 	disabled = false
 	self.playable = char_stats.can_play_card(card)
