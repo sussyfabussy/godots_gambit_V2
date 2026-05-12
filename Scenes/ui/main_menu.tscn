@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://clba6p10n443g"]
+
+[ext_resource type="Texture2D" uid="uid://dpfqok8tuy4r7" path="res://art/tile_0084.png" id="1_0js1b"]
+[ext_resource type="Script" uid="uid://dgekuyh8y24xi" path="res://Scenes/ui/main_menu.gd" id="1_iug37"]
+[ext_resource type="Texture2D" uid="uid://cwf6dyi56tgo" path="res://art/tile_0088.png" id="2_iug37"]
+[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/tile_0087.png" id="3_6gvf8"]
+[ext_resource type="Texture2D" uid="uid://con6y7mc74c5a" path="res://art/tile_0120.png" id="4_itnin"]
+[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://art/tile_0110.png" id="5_wvo6i"]
+[ext_resource type="Texture2D" uid="uid://c24y6l0ivlqp7" path="res://art/tile_0108.png" id="6_iiquc"]
+
+[sub_resource type="Gradient" id="Gradient_ll7s5"]
+offsets = PackedFloat32Array(0, 0.99444443)
+colors = PackedColorArray(0.2320202, 0.09895762, 2.4065375e-08, 1, 0.05490196, 0, 0.05882353, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7b74l"]
+gradient = SubResource("Gradient_ll7s5")
+width = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_ajqjj"]
+line_spacing = 10.0
+shadow_size = 4
+shadow_color = Color(0.52392346, 0.36977625, 0.27785447, 0.43529412)
+
+[node name="MainMenu" type="Control" unique_id=506827448]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iug37")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1583118255]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_7b74l")
+
+[node name="Title" type="Label" parent="." unique_id=1965634463]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -64.0
+offset_right = 87.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "My Awesome 
+Roguelike Deckbuilder"
+label_settings = SubResource("LabelSettings_ajqjj")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1034791766]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.5
+offset_top = -75.0
+offset_right = 39.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 6
+
+[node name="Continue" type="Button" parent="VBoxContainer" unique_id=752165021]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "Continue"
+
+[node name="New Run" type="Button" parent="VBoxContainer" unique_id=1182553904]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "New Run"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1581857254]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "Exit
+"
+
+[node name="Wizard" type="Sprite2D" parent="." unique_id=855691225]
+position = Vector2(19, 107)
+scale = Vector2(2, 2)
+texture = ExtResource("1_0js1b")
+
+[node name="Assassin" type="Sprite2D" parent="." unique_id=945213211]
+position = Vector2(46, 92)
+scale = Vector2(2, 2)
+texture = ExtResource("2_iug37")
+
+[node name="Warrior" type="Sprite2D" parent="." unique_id=1766303821]
+position = Vector2(45, 124)
+scale = Vector2(2, 2)
+texture = ExtResource("3_6gvf8")
+
+[node name="Bat" type="Sprite2D" parent="." unique_id=1694130864]
+position = Vector2(195, 108)
+scale = Vector2(2, 2)
+texture = ExtResource("4_itnin")
+flip_h = true
+
+[node name="Crab" type="Sprite2D" parent="." unique_id=2139440782]
+position = Vector2(222, 93)
+scale = Vector2(2, 2)
+texture = ExtResource("5_wvo6i")
+flip_h = true
+
+[node name="Ghost" type="Sprite2D" parent="." unique_id=857696369]
+position = Vector2(223, 122)
+scale = Vector2(2, 2)
+texture = ExtResource("6_iiquc")
+flip_h = true
+
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/New Run" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
