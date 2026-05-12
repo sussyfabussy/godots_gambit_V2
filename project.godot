@@ -31,6 +31,10 @@ window/stretch/mode="viewport"
 
 enemies=""
 
+[gui]
+
+theme/custom="uid://cyujobfdcs0oc"
+
 [input]
 
 left_mouse={
