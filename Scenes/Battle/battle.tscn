@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bh0bgcfu4dth4" path="res://Scenes/card_ui/mana_ui.tscn" id="10_rgg0r"]
 [ext_resource type="PackedScene" uid="uid://3wp3qlckcjx8" path="res://Scenes/ui/tooltip.tscn" id="12_q43bu"]
 [ext_resource type="Theme" uid="uid://cyujobfdcs0oc" path="res://main_theme.tres" id="13_11mmy"]
+[ext_resource type="Script" uid="uid://exnp2nf5wibv" path="res://Scenes/ui/red_flash.gd" id="16_g0m8i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8wje"]
 size = Vector2(256, 100)
@@ -102,3 +103,20 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("13_11mmy")
 text = "End Turn"
+
+[node name="RedFlash" type="CanvasLayer" parent="." unique_id=185762152]
+layer = 2
+script = ExtResource("16_g0m8i")
+
+[node name="ColorRect" type="ColorRect" parent="RedFlash" unique_id=1067170134]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.44313726, 0.44313726, 0)
+
+[node name="Timer" type="Timer" parent="RedFlash" unique_id=383217323]
+wait_time = 0.1
+one_shot = true

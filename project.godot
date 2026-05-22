@@ -18,6 +18,7 @@ config/icon="uid://dshelwe1oas47"
 [autoload]
 
 Events="*uid://06po4vuemb7l"
+Shaker="*uid://be2psof1i5ab1"
 
 [display]
 
