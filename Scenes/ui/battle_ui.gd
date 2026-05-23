@@ -11,12 +11,24 @@ extends CanvasLayer
 func _ready() -> void:
 	Events.player_hand_drawn.connect(_on_player_hand_drawn)
 	end_turn_button.pressed.connect(_on_end_turn_button_pressed)
+	
+
+	if char_stats:
+		_update_ui()
 
 
-func _set_char_stats(value:CharacterStats) -> void:
+func _set_char_stats(value: CharacterStats) -> void:
 	char_stats = value
-	mana_ui.char_stats = char_stats
-	hand.char_stats = char_stats
+	
+	if is_node_ready():
+		_update_ui()
+
+
+func _update_ui() -> void:
+	if mana_ui:
+		mana_ui.char_stats = char_stats
+	if hand:
+		hand.char_stats = char_stats
 
 
 func _on_player_hand_drawn() -> void:

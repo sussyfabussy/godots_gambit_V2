@@ -10,10 +10,12 @@
 [ext_resource type="Resource" uid="uid://ci847yrv1e0mg" path="res://characters/warrior/warrior.tres" id="4_rgg0r"]
 [ext_resource type="Resource" uid="uid://d0n1mm42ya5xf" path="res://enemies/crab/crab_enemy.tres" id="5_11mmy"]
 [ext_resource type="Script" uid="uid://boqgtlnlweqrp" path="res://Scenes/ui/battle_ui.gd" id="7_11mmy"]
+[ext_resource type="PackedScene" uid="uid://cjn6mf50fmswo" path="res://Scenes/ui/intent_ui.tscn" id="7_ojuhj"]
 [ext_resource type="Script" uid="uid://dbek108q1hijt" path="res://Scenes/player/player_handler.gd" id="8_q43bu"]
 [ext_resource type="PackedScene" uid="uid://bh0bgcfu4dth4" path="res://Scenes/card_ui/mana_ui.tscn" id="10_rgg0r"]
 [ext_resource type="PackedScene" uid="uid://3wp3qlckcjx8" path="res://Scenes/ui/tooltip.tscn" id="12_q43bu"]
 [ext_resource type="Theme" uid="uid://cyujobfdcs0oc" path="res://main_theme.tres" id="13_11mmy"]
+[ext_resource type="Script" uid="uid://exnp2nf5wibv" path="res://Scenes/ui/red_flash.gd" id="16_g0m8i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8wje"]
 size = Vector2(256, 100)
@@ -42,6 +44,10 @@ script = ExtResource("4_ev1ic")
 position = Vector2(194, 76)
 stats = ExtResource("5_11mmy")
 
+[node name="IntentUI" parent="EnemyHandler/Enemy" unique_id=1052988005 instance=ExtResource("7_ojuhj")]
+offset_top = -24.0
+offset_bottom = -10.0
+
 [node name="Player" parent="." unique_id=882827428 instance=ExtResource("3_17ekq")]
 position = Vector2(64, 80)
 stats = ExtResource("4_rgg0r")
@@ -54,6 +60,7 @@ hand = NodePath("../BattleUI/Hand")
 
 [node name="BattleUI" type="CanvasLayer" parent="." unique_id=770813461 groups=["ui_layer"]]
 script = ExtResource("7_11mmy")
+char_stats = ExtResource("4_rgg0r")
 
 [node name="Hand" type="HBoxContainer" parent="BattleUI" unique_id=37413406]
 anchors_preset = 7
@@ -68,6 +75,7 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 script = ExtResource("2_aqr0y")
+char_stats = ExtResource("4_rgg0r")
 
 [node name="ManaUI" parent="BattleUI" unique_id=1788293824 instance=ExtResource("10_rgg0r")]
 offset_left = 4.0
@@ -95,3 +103,20 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("13_11mmy")
 text = "End Turn"
+
+[node name="RedFlash" type="CanvasLayer" parent="." unique_id=185762152]
+layer = 2
+script = ExtResource("16_g0m8i")
+
+[node name="ColorRect" type="ColorRect" parent="RedFlash" unique_id=1067170134]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.44313726, 0.44313726, 0)
+
+[node name="Timer" type="Timer" parent="RedFlash" unique_id=383217323]
+wait_time = 0.1
+one_shot = true
