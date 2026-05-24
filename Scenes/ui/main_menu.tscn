@@ -17,7 +17,7 @@ gradient = SubResource("Gradient_ll7s5")
 width = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_ajqjj"]
-line_spacing = 10.0
+line_spacing = 0.0
 shadow_size = 4
 shadow_color = Color(0.52392346, 0.36977625, 0.27785447, 0.43529412)
 
@@ -41,17 +41,13 @@ texture = SubResource("GradientTexture1D_7b74l")
 
 [node name="Title" type="Label" parent="." unique_id=1965634463]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -86.0
-offset_top = -64.0
-offset_right = 87.0
-offset_bottom = -8.0
+offset_left = -86.5
+offset_right = 86.5
+offset_bottom = 89.0
 grow_horizontal = 2
-grow_vertical = 2
 text = "My Awesome 
 Roguelike Deckbuilder"
 label_settings = SubResource("LabelSettings_ajqjj")
