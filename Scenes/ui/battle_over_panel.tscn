@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://107vdbif7iaf"]
 
 [ext_resource type="Script" uid="uid://c74y6oj373760" path="res://Scenes/ui/battle_over_panel.gd" id="1_4fkw2"]
-[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="1_hdo7q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fkw2"]
 bg_color = Color(0, 0, 0, 0.30588236)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hwdhu"]
-font = ExtResource("1_hdo7q")
 font_size = 24
 
 [node name="BattleOverPanel" type="Panel" unique_id=486738830]
@@ -47,7 +45,6 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 16)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_hdo7q")
 theme_override_font_sizes/font_size = 8
 text = "Awesome!"
 
@@ -56,6 +53,5 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 16)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_hdo7q")
 theme_override_font_sizes/font_size = 8
 text = "Restart"

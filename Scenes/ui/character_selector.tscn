@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dwpv4dnwr55kf"]
+[gd_scene format=3 uid="uid://diuovv6ali1m2"]
 
 [ext_resource type="Script" uid="uid://bljbupyqrqsgv" path="res://Scenes/ui/character_selector.gd" id="1_swd7w"]
 [ext_resource type="Resource" uid="uid://drkdb2uwblsdx" path="res://Scenes/run/run_startup.tres" id="2_3mm8h"]
@@ -21,7 +21,7 @@ shadow_size = 4
 shadow_color = Color(0.52392346, 0.36977625, 0.27785447, 0.43529412)
 
 [sub_resource type="LabelSettings" id="LabelSettings_854w8"]
-line_spacing = 2.0
+line_spacing = -5.0
 font_size = 12
 shadow_size = 4
 shadow_color = Color(0.52392346, 0.36977625, 0.27785447, 0.43529412)
