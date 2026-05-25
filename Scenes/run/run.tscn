@@ -3,19 +3,27 @@
 [ext_resource type="Script" uid="uid://cpviq0kbvqmw0" path="res://Scenes/run/run.gd" id="1_5fep7"]
 [ext_resource type="Resource" uid="uid://drkdb2uwblsdx" path="res://Scenes/run/run_startup.tres" id="2_pv4e6"]
 [ext_resource type="PackedScene" uid="uid://cx240vsi72sld" path="res://Scenes/map/map.tscn" id="2_she2k"]
+[ext_resource type="Theme" uid="uid://cyujobfdcs0oc" path="res://main_theme.tres" id="4_itd58"]
+[ext_resource type="PackedScene" uid="uid://77i8kslbo1xv" path="res://Scenes/ui/card_pile_opener.tscn" id="5_smnto"]
+[ext_resource type="PackedScene" uid="uid://4p8fl4sjy5x6" path="res://Scenes/ui/card_pile_view.tscn" id="6_smnto"]
 
 [node name="Run" type="Node" unique_id=1369923274]
 script = ExtResource("1_5fep7")
 run_startup = ExtResource("2_pv4e6")
 
 [node name="Map" parent="." unique_id=1511452455 instance=ExtResource("2_she2k")]
+theme = ExtResource("4_itd58")
 
 [node name="CurrentView" type="Node" parent="." unique_id=343863642]
 
 [node name="DebugButtons" type="VBoxContainer" parent="." unique_id=768591993]
 anchors_preset = 9
 anchor_bottom = 1.0
+offset_right = 31.0
 grow_vertical = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_itd58")
+alignment = 1
 
 [node name="MapButton" type="Button" parent="DebugButtons" unique_id=2063135204]
 unique_name_in_owner = true
@@ -52,3 +60,41 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 5
 text = "Campfire"
+
+[node name="TopBar" type="CanvasLayer" parent="." unique_id=2053924126]
+layer = 3
+
+[node name="BackGround" type="ColorRect" parent="TopBar" unique_id=449683269]
+custom_minimum_size = Vector2(0, 18)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.49019608)
+
+[node name="BarItems" type="HBoxContainer" parent="TopBar" unique_id=424464302]
+custom_minimum_size = Vector2(0, 18)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Placeholder" type="Control" parent="TopBar/BarItems" unique_id=816932666]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DeckButton" parent="TopBar/BarItems" unique_id=299793849 node_paths=PackedStringArray("counter") instance=ExtResource("5_smnto")]
+unique_name_in_owner = true
+layout_mode = 2
+counter = NodePath("Counter")
+
+[node name="Counter" type="Label" parent="TopBar/BarItems/DeckButton" unique_id=98678988]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 13.0
+offset_right = 3.0
+offset_bottom = 19.0
+theme = ExtResource("4_itd58")
+text = "9"
+
+[node name="DeckView" parent="TopBar" unique_id=1714725056 instance=ExtResource("6_smnto")]
+unique_name_in_owner = true
+visible = false

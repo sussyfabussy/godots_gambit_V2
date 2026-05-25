@@ -2,11 +2,12 @@ extends Control
 
 const CHAR_SELECTOR_SCENE := preload("res://scenes//ui/character_selector.tscn")
 
-
 @onready var continue_button: Button = %Continue
+
 
 func _ready() -> void:
 	get_tree().paused = false
+
 
 func _on_continue_pressed() -> void:
 	print("continue run")
