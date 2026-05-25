@@ -2,16 +2,20 @@
 
 [ext_resource type="Script" uid="uid://d06mvm1i6gkrk" path="res://Scenes/enemy/enemy.gd" id="1_287tu"]
 [ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://art/tile_0110.png" id="1_hghv2"]
-[ext_resource type="Resource" uid="uid://d0n1mm42ya5xf" path="res://enemies/crab/crab_enemy.tres" id="2_0830c"]
+[ext_resource type="Script" uid="uid://bb088eeaiwcuw" path="res://custom_resources/enemy_stats.gd" id="2_0830c"]
 [ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="2_afpow"]
 [ext_resource type="PackedScene" uid="uid://br6s23jvy7g6n" path="res://Scenes/ui/stats_ui.tscn" id="3_287tu"]
+
+[sub_resource type="Resource" id="Resource_ghaa6"]
+script = ExtResource("2_0830c")
+metadata/_custom_type_script = "uid://bb088eeaiwcuw"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvvpr"]
 
 [node name="Enemy" type="Area2D" unique_id=535308417]
 collision_layer = 4
 script = ExtResource("1_287tu")
-stats = ExtResource("2_0830c")
+stats = SubResource("Resource_ghaa6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1419041059]
 texture = ExtResource("1_hghv2")
