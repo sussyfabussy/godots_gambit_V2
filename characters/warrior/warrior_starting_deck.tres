@@ -4,8 +4,9 @@
 [ext_resource type="Script" uid="uid://dn2vi5rqra2al" path="res://custom_resources/card_pile.gd" id="2_2wma6"]
 [ext_resource type="Resource" uid="uid://kxfab5pn4q4c" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="2_gobyu"]
 [ext_resource type="Resource" uid="uid://balaamf0edr8v" path="res://characters/warrior/cards/warrior_block.tres" id="3_ne0bc"]
+[ext_resource type="Resource" uid="uid://bvxemdcise5bv" path="res://characters/warrior/cards/warrior_slash.tres" id="4_ne0bc"]
 
 [resource]
 script = ExtResource("2_2wma6")
-cards = Array[ExtResource("1_8w230")]([ExtResource("2_gobyu"), ExtResource("2_gobyu"), ExtResource("2_gobyu"), ExtResource("2_gobyu"), ExtResource("2_gobyu"), ExtResource("3_ne0bc"), ExtResource("3_ne0bc"), ExtResource("3_ne0bc"), ExtResource("3_ne0bc"), ExtResource("3_ne0bc")])
+cards = Array[ExtResource("1_8w230")]([ExtResource("2_gobyu"), ExtResource("2_gobyu"), ExtResource("2_gobyu"), ExtResource("2_gobyu"), ExtResource("3_ne0bc"), ExtResource("3_ne0bc"), ExtResource("3_ne0bc"), ExtResource("3_ne0bc"), ExtResource("4_ne0bc"), ExtResource("4_ne0bc")])
 metadata/_custom_type_script = "uid://dn2vi5rqra2al"
