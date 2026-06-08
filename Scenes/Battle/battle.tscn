@@ -46,7 +46,7 @@ debug_color = Color(0, 0.6, 0.69803923, 0.15294118)
 [node name="EnemyHandler" type="Node2D" parent="." unique_id=400539102]
 script = ExtResource("4_ev1ic")
 
-[node name="BatEnemy" parent="EnemyHandler" unique_id=535308417 instance=ExtResource("2_17ekq")]
+[node name="BatEnemy" parent="EnemyHandler" unique_id=535308417 groups=["enemies"] instance=ExtResource("2_17ekq")]
 position = Vector2(168, 71)
 stats = ExtResource("7_xx4v1")
 
@@ -54,7 +54,7 @@ stats = ExtResource("7_xx4v1")
 offset_top = -24.0
 offset_bottom = -10.0
 
-[node name="CrabEnemy" parent="EnemyHandler" unique_id=617791725 instance=ExtResource("2_17ekq")]
+[node name="CrabEnemy" parent="EnemyHandler" unique_id=617791725 groups=["enemies"] instance=ExtResource("2_17ekq")]
 position = Vector2(200, 84)
 stats = ExtResource("5_11mmy")
 
@@ -62,7 +62,7 @@ stats = ExtResource("5_11mmy")
 offset_top = -24.0
 offset_bottom = -10.0
 
-[node name="BatEnemy2" parent="EnemyHandler" unique_id=1927692006 instance=ExtResource("2_17ekq")]
+[node name="BatEnemy2" parent="EnemyHandler" unique_id=1927692006 groups=["enemies"] instance=ExtResource("2_17ekq")]
 position = Vector2(233, 73)
 stats = ExtResource("7_xx4v1")
 
